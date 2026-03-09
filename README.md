@@ -2,7 +2,16 @@
 
 日本語名から**種名・png名・英名・Taxid**を取得するツール。
 
-Wikipedia / Wikidata を経由して情報を取得します。
+Wikidata を経由して情報を取得します。
+
+## 処理フロー
+
+| ステップ | API |
+|---------|-----|
+| 日本語名 → Wikidata ID | `ja.wikipedia.org/api/rest_v1/page/summary/` |
+| Wikidata ID → 種名 (P225) | `wikidata.org/w/api.php` |
+| Wikidata ID → taxid (P685) | 同上 |
+| Wikidata ID → 英名 (P1843) | 同上 |
 
 ---
 
